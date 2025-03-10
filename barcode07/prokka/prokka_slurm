@@ -1,0 +1,37 @@
+#!/bin/bash
+
+#SBATCH --partition=defq
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=32
+#SBATCH --mem=300g
+#SBATCH --time=48:00:00
+#SBATCH --job-name=pass_annotation
+#SBATCH --output=/share/BioinfMSc/rotation1/Group3/barcode07/prokka/logs/slurm-%x-%j.out
+#SBATCH --error=/share/BioinfMSc/rotation1/Group3/barcode07/prokka/logs/slurm-%x-%j.err
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=mbxsh12@exmail.nottingham.ac.uk
+
+source $HOME/.bash_profile
+
+conda activate prokka
+
+#long read pass and fail annotation
+cd /share/BioinfMSc/rotation1/Group3/barcode07/merged_long/all_assembly
+prokka --outdir /share/BioinfMSc/rotation1/Group3/barcode07/prokka/all_annotation --force assembly.fasta
+
+#long read pass only annotation
+cd /share/BioinfMSc/rotation1/Group3/barcode07/merged_long/pass_assembly
+prokka --outdir /share/BioinfMSc/rotation1/Group3/barcode07/prokka/pass_annotation --force assembly.fasta
+
+#long read fail only annotation
+cd /share/BioinfMSc/rotation1/Group3/barcode07/merged_long/fail_assembly
+prokka --outdir /share/BioinfMSc/rotation1/Group3/barcode07/prokka/fail_annotation --force assembly.fasta
+
+#short read annotation
+cd /share/BioinfMSc/rotation1/Group3/barcode07/merged_short/assembly
+prokka --outdir /share/BioinfMSc/rotation1/Group3/barcode07/prokka/short_annotation --force assembly_short.fasta
+
+conda deactivate
+
+exit
