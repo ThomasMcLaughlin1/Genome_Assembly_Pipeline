@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#SBATCH --partition=defq
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=100g
+#SBATCH --time=24:00:00
+#SBATCH --job-name=quast
+#SBATCH --output=/share/BioinfMSc/rotation1/Group3/quast/logs/slurm-%x-%j.out
+#SBATCH --error=/share/BioinfMSc/rotation1/Group3/quast/logs/slurm-%x-%j.err
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=pcytm7@exmail.nottingham.ac.uk
+
+source $HOME/.bash_profile
+
+conda activate quast
+
+quast /share/BioinfMSc/rotation1/Group3/merged_long/fastq_fail/fail_assembly/assembly.fasta  \
+/share/BioinfMSc/rotation1//Group3/merged_short/assembly/assembly_short.fasta  \
+/share/BioinfMSc/rotation1//Group3/hybrid/assembly/assembly_hybrid.fasta \
+-r /share/BioinfMSc/rotation1/Group3/quast/reference_fasta/merged_HaloferaxVolcanii_reference.fasta -o quast_fail
+
+conda deactivate
