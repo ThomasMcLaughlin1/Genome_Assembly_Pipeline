@@ -4,17 +4,17 @@ A series of shell scripts designed for genome assembly from de novo sequencing d
 
 # Features
 
-Merges Nanopore (long reads) and Illumina (short reads) data
+- Merges Nanopore (long reads) and Illumina (short reads) data
 
-Quality assessment with NanoPlot
+- Quality assessment with NanoPlot
 
-Assembly using Unicycler
+- Assembly using Unicycler
 
-comparative analysis of assemblies using QUAST
+- comparative analysis of assemblies using QUAST
 
-Mapping reads to reference using minimap2 and BWA-mem
+- Mapping reads to reference using minimap2 and BWA-mem
 
-Visualization and Artemis
+- Visualization and Artemis
 
 # Prerequisites
 
