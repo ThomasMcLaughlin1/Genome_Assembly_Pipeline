@@ -20,27 +20,27 @@ This github page is desgined to showcase the scripts used to assemble and analys
 
 
 
-#Features
+#Features (workflow)
 
-- Merges Nanopore (long reads) and Illumina (short reads) data
+- (1) Merges Nanopore (long reads) and Illumina (short reads) data
 
-- Quality assessment with NanoPlot
+- (2) Quality assessment with NanoPlot
 
-- Assembly using Unicycler
+- (3) Assembly using Unicycler
 
-- Visualisation of prokaryotic long read, short read and hybrid assemblies usi Genovi
+- (4) Visualisation of prokaryotic long read, short read and hybrid assemblies usi Genovi
 
-- comparative analysis of assemblies using QUAST
+- (5) comparative analysis of assemblies using QUAST
 
-- Annotation of assemblies using PROKKA
+- (6) Annotation of assemblies using PROKKA
 
-- Visualisation of annotation using Artemis
+- (7) Visualisation of annotation using Artemis
 
-- Mapping of short reads to reference using BWA
+- (8) Mapping of short reads to reference using BWA
 
-- Mapping of long reads to reference using minimap2
+- (9) Mapping of long reads to reference using minimap2
 
-- Visualization of reads mapped back to reference in IGV
+- (10) Visualization of reads mapped back to reference in IGV
 
 # Prerequisites
 
