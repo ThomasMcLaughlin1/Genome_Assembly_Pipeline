@@ -14,13 +14,13 @@ A series of shell scripts designed for genome assembly from de novo sequencing d
 - [Contributing](#contributing)
 - [License](#license)
 
-#About
+# About
 
 This github page is desgined to showcase the scripts used to assemble and analyse nanopore and illumina reads from the species Haloferax volcanii. This pipeline enabled the sucessful identification of genomic changes within the samples provided, as well as providing detailed insights into chromosomal structure. 
 
 
 
-#Features (workflow)
+# Features (workflow)
 
 (1) Merges Nanopore (long reads) and Illumina (short reads) data
 
