@@ -23,6 +23,7 @@ This github page is desgined to showcase the scripts used to assemble and analys
 # Features (workflow)
 
 (1) Merges Nanopore (long reads) and Illumina (short reads) data
+- Nanopore reads consist of pass reads and fail reads. Pass reads represent reads which have passed a quality assesment, while fail reads are below the quality threshold and considered "noisy" or poor quality  
 
 (2) Quality assessment with NanoPlot
 
@@ -34,9 +35,9 @@ This github page is desgined to showcase the scripts used to assemble and analys
 
 (6) Annotation of assemblies using PROKKA
 
-(7) Visualisation of annotation using Artemis
+(7) Annotation visualisation using Artemis
 
-(8) Mapping of short reads to reference using BWA
+(8) Mapping of short reads to reference with BWA
 
 (9) Mapping of long reads to reference using minimap2
 
