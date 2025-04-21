@@ -201,5 +201,33 @@ All SLURM scripts were submitted to the University of Nottingham's HPC. Running 
 Contributions are welcome, please open an issue or submit a pull request.
 
 # References
+NanoPlot (v1.43.0)
+De Coster, W., D’Hert, S., Schultz, D. T., Cruts, M., & Van Broeckhoven, C. (2018). NanoPack: visualizing and processing long-read sequencing data. Bioinformatics, 34(15), 2666–2669.
+https://github.com/wdecoster/NanoPlot
+
+Unicycler (v0.5.1)
+Wick, R. R., Judd, L. M., Gorrie, C. L., & Holt, K. E. (2017). Unicycler: Resolving bacterial genome assemblies from short and long sequencing reads. PLOS Computational Biology, 13(6), e1005595.
+https://github.com/rrwick/Unicycler
+
+QUAST (v5.3.0)
+Gurevich, A., Saveliev, V., Vyahhi, N., & Tesler, G. (2013). QUAST: quality assessment tool for genome assemblies. Bioinformatics, 29(8), 1072–1075.
+https://quast.sourceforge.net
+
+Minimap2 (v2.28-r1209)
+Li, H. (2018). Minimap2: pairwise alignment for nucleotide sequences. Bioinformatics, 34(18), 3094–3100.
+https://github.com/lh3/minimap2
+
+BWA (v0.7.18)
+Li, H., & Durbin, R. (2009). Fast and accurate short read alignment with Burrows–Wheeler transform. Bioinformatics, 25(14), 1754–1760.
+http://bio-bwa.sourceforge.net
+
+Artemis (v18.2.0)
+Carver, T., Harris, S. R., Berriman, M., Parkhill, J., & McQuillan, J. A. (2012). Artemis: an integrated platform for visualization and analysis of high-throughput sequence-based experimental data. Bioinformatics, 28(4), 464–469.
+https://www.sanger.ac.uk/tool/artemis/
+
+Samtools (v1.21)
+Danecek, P., Bonfield, J. K., Liddle, J., Marshall, J., Ohan, V., Pollard, M. O., ... & Li, H. (2021). Twelve years of SAMtools and BCFtools. GigaScience, 10(2), giab008.
+http://www.htslib.org
+
 
 
