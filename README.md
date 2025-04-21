@@ -24,27 +24,118 @@ This github page is desgined to showcase the scripts used to assemble and analys
 
 # Features (workflow)
 
-(1) Merges Nanopore (long reads) and Illumina (short reads) data. Nanopore reads consist of pass reads and fail reads. Pass reads represent reads which have passed a quality assesment, while fail reads are below the quality threshold and considered "noisy" or poor quality  
+(1) Merges Nanopore (long reads) and Illumina (short reads) data. Nanopore reads consist of pass 
+    reads and fail reads. Pass reads represent reads which have passed a quality assesment, while 
+    fail reads are below the quality threshold and considered "noisy" or poor quality  
 
 (2) Assess the quality of the reads with NanoPlot
 
 (3) Assemble of prokaryotic long read, short read and hybrid through the use of Unicycler
 
-(4) Use Geovi to visualise the structure and content of prokaryotic long read, short read and hybrid assemblies 
+(4) Annotate each genome using PROKKA
 
 (5) comparative analysis of assemblies using QUAST
 
-(6) Annotate each genome using PROKKA
+(6) visualisalise PROKKA annotation using Artemis and Genovi 
 
-(7) visualisalise PROKKA annotation using Artemis
+(7) Map short reads back to the reference using BWA
 
-(8) Map short reads back to the reference using BWA
+(8) Map long reads back to reference using minimap2
 
-(9) Map long reads back to reference using minimap2
-
-(10) Visualization of reads mapped back to reference in IGV
+(9) Visualization of reads mapped back to reference in IGV
 
 # Data
+stage 1 merging data 
+- Input files were compressed fasta.gz files of nanopore and illumina reads. Merged output files 
+  were also in fasta.gz format
+
+stage 2 - assment of the quality of the reads 
+- Both input and output files were in fasta.gz format
+
+stage 3 - Genome assembly 
+- Input files were in fasta.gz. Assmbled genomes were no longer in compressed gz format and were 
+  .fa fasta files
+
+stage 4 - PROKKA annotation
+- The input files for prokka were the .fa genome assemblies.
+- PROKKA annotation produced the following output files
+
+- .err Standard error output
+- .log step by step of what prokka did
+- .ffn fasta file of nucleotide sequences 
+- .fsa fasta of whole genome 
+- .gff General feature format - includes all annotations in one file
+- .sqn sequin file. Binary file containing nucleotide sequences of contigs, anntoations and any 
+   meta data such as organism name associated with the annotation
+- .tsv tab serparted summary of features
+- .faa fasta of protein sequences
+- .fna nucleotide fasta of contigs
+- .gbk Genbank file format 
+- .tbl feature table 
+- .txt summary of annotation results
+
+stage 5 - quast comparative analysis
+- Pass, fail and all long read .fasta assembly files were compared to short and hybrid .fasta 
+  assemblies
+- Quast comparative analysis produced the following output files and folders
+
+files
+- report.html Interactive HTML report with plots
+- report.pdf 
+- report.txt
+- report.tsv
+- transposed_report.tsv metrics as rows instead of columns.
+- transposed_report.txt
+- icarus.html
+
+folders
+- basic_stats/
+- genome_stats/
+- contigs_reports/
+- aligned_stats/
+- icarus_viewers/ files used by the icarus browser
+
+stage 6
+- The prokka .gbk file was used as an input into genovi
+- To visualise the prokka annotation in artemis the prokka .gbk and .gff were used
+
+- Genovi's output consisted of the following files
+- genovi.svg & genovi.png represented the circular genome plot
+- genovi-contig_*.sv / .png were individual contig plots
+- genovi_COG_Classification.csv
+- genovi_COG_Classification_percentages.csv
+- genovi_COG_Classification.csv_percentage.png
+- genovi_COG_Histogram.png
+- genovi_Gral_Stats.csv
+
+stage 7 mapping short reads back to refernece
+- The reference HaloferaxVolcanii.fasta along with the merged foward and reverse .fasta.gz reads 
+  were inputed to BWA
+
+- BWA produced the following index files
+- .amb stores ambiguous bases
+- .ann contains refernce sequence names, lenghths and positions
+- .bwt contains the burrows wheeler transform of the refernce
+- .pac compressed version of the refence, bases are encoded 2 bits per base 
+- .sa contains indexes of all possible suffixes of the refernce 
+
+- The alignemnt files produced by BWA consisted of
+- aln-pe.sam
+- aln-pe.sam.gz
+
+- The sam file was compressed to a bam file using samtools
+- aln-pe.bam
+
+stage 8
+- Merged pass.fasta.gz were inputted into minmap2 to generate a .mmi index of the reads
+- minimap2 then produced .sam file from the inputted .mmi index of the pass reads and the reference 
+ .fasta
+- This produced a .sam file conatining the reads mapped back to the reference
+- This file was then converted to a bam file, which was sorted and 
+  indexed by samtools
+
+stage 9
+- Sorted and indexed bam file of reads mapped back to reference was visualised in IGV
 
 # Prerequisites
 
@@ -61,6 +152,8 @@ Ensure the following dependencies are installed:
 - BWA (v0.7.18)
 
 - Artemis (v18.2.0)
+
+- samtools (v1.21)
 
 
 # Installation
@@ -93,6 +186,10 @@ conda install -c bioconda bwa
 conda create --name artemis
 conda activate artemis
 conda install -c bioconda artemis
+
+conda create --name samtools
+conda activate samools
+conda install -c bioconda samtools
 
 # Usage 
 All SLURM scripts were submitted to the University of Nottingham's HPC. Running and moitoring jobs were done by using the following commands 
