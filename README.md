@@ -45,7 +45,7 @@ This github page is desgined to showcase the scripts used to assemble and analys
 (9) Visualization of reads mapped back to reference in IGV
 
 # Data
-See [data_description.txt](ThomasMcLaughlin1/Genome_Assembly_Pipeline/data_description.txt) for detailed description of file type, inputs and outputs
+See [data_description.txt](ThomasMcLaughlin1/Genome_Assembly_Pipeline/Data_description.txt) for detailed description of file type, inputs and outputs
 # Prerequisites
 
 Ensure the following dependencies are installed:
