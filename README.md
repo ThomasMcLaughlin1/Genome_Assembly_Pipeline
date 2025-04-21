@@ -2,62 +2,65 @@
 
 A series of shell scripts designed for genome assembly from de novo sequencing data. This pipeline integrates multiple tools to merge, assess, assemble, and visualize genomic data from Nanopore and Illumina platforms.
 
-# Contents
-
-- [About](#about)
-- [Features](#features)
-- [Prerequisites](#Prerequisites)
-- [Installation](#installation)
-- [Installing prerequisites](#Installing_prerequisites)
-- [Usage](#usage)
-- [Customization](#customization)
-- [Contributing](#contributing)
-- [License](#license)
-
-# About
+# Introduction
 
 This github page is desgined to showcase the scripts used to assemble and analyse nanopore and illumina reads from the species Haloferax volcanii. This pipeline enabled the sucessful identification of genomic changes within the samples provided, as well as providing detailed insights into chromosomal structure. 
 
 
+# Contents
+
+- [About](#about)
+- [Introduction](#Introduction)
+- [Features](#features)
+- [Data](#Data)
+- [Prerequisites](#Prerequisites)
+- [Installation](#installation)
+- [Installing prerequisites](#Installing_prerequisites)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [References](#References)
+  
+
 
 # Features (workflow)
 
-(1) Merges Nanopore (long reads) and Illumina (short reads) data
-- Nanopore reads consist of pass reads and fail reads. Pass reads represent reads which have passed a quality assesment, while fail reads are below the quality threshold and considered "noisy" or poor quality  
+(1) Merges Nanopore (long reads) and Illumina (short reads) data. Nanopore reads consist of pass reads and fail reads. Pass reads represent reads which have passed a quality assesment, while fail reads are below the quality threshold and considered "noisy" or poor quality  
 
-(2) Quality assessment with NanoPlot
+(2) Assess the quality of the reads with NanoPlot
 
-(3) Assembly using Unicycler
+(3) Assemble of prokaryotic long read, short read and hybrid through the use of Unicycler
 
-(4) Visualisation of prokaryotic long read, short read and hybrid assemblies usi Genovi
+(4) Use Geovi to visualise the structure and content of prokaryotic long read, short read and hybrid assemblies 
 
 (5) comparative analysis of assemblies using QUAST
 
-(6) Annotation of assemblies using PROKKA
+(6) Annotate each genome using PROKKA
 
-(7) Annotation visualisation using Artemis
+(7) visualisalise PROKKA annotation using Artemis
 
-(8) Mapping of short reads to reference with BWA
+(8) Map short reads back to the reference using BWA
 
-(9) Mapping of long reads to reference using minimap2
+(9) Map long reads back to reference using minimap2
 
 (10) Visualization of reads mapped back to reference in IGV
+
+# Data
 
 # Prerequisites
 
 Ensure the following dependencies are installed:
 
-- NanoPlot
+- NanoPlot (v1.43.0)
 
-- Unicycler
+- Unicycler (v0.5.1)
 
-- QUAST
+- QUAST (v5.3.0)
 
-- Minimap2
+- Minimap2 (v2.28-r1209)
 
-- BWA
+- BWA (v0.7.18)
 
-- Artemis
+- Artemis (v18.2.0)
 
 
 # Installation
@@ -66,7 +69,30 @@ git clone https://github.com/ThomasMcLaughlin1/denovo_assembly.git
 cd genome-assembly-pipeline
 
 # Installing prerequisites 
-conda install -c bioconda nanoplot unicycler quast minimap2 bwa
+
+conda create --name NanoPlot 
+conda activate NanoPlot
+conda install -c bioconda NanoPlot
+
+conda create --name unicycler
+conda activate unicycler
+conda install -c bioconda unicycler
+
+conda create --name quast
+conda activate quast
+conda install -c bioconda quast
+
+conda create --name minimap2
+conda activate minimap2
+conda install -c bioconda minimap2
+
+conda create --name bwa
+conda activate bwa
+conda install -c bioconda bwa
+
+conda create --name artemis
+conda activate artemis
+conda install -c bioconda artemis
 
 # Usage 
 All SLURM scripts were submitted to the University of Nottingham's HPC. Running and moitoring jobs were done by using the following commands 
@@ -75,6 +101,8 @@ All SLURM scripts were submitted to the University of Nottingham's HPC. Running 
 - cancel job: scancel <jobID>
 
 # Contributing
-Contributions are welcome! Please open an issue or submit a pull request.
+Contributions are welcome, please open an issue or submit a pull request.
+
+# References
 
 
