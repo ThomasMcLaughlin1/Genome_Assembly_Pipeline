@@ -4,7 +4,7 @@ A series of shell scripts designed for genome assembly from de novo sequencing d
 
 # Introduction
 
-This github page is desgined to showcase the scripts used to assemble and analyse nanopore and illumina reads from the species Haloferax volcanii. This pipeline enabled the sucessful identification of genomic changes within the samples provided, as well as providing detailed insights into chromosomal structure. 
+This project investigates genomic changes between genomes assembled by both Nanopore and Illumina read datais desgined to showcase the scripts used to assemble and analyse nanopore and illumina reads from the species Haloferax volcanii. This pipeline enabled the sucessful identification of genomic changes within the samples provided, as well as providing detailed insights into chromosomal structure. 
 
 
 # Contents
@@ -45,7 +45,7 @@ This github page is desgined to showcase the scripts used to assemble and analys
 (9) Visualization of reads mapped back to reference in IGV
 
 # Data
-See [data_description.txt](ThomasMcLaughlin1/Genome_Assembly_Pipeline/Data_description.txt) for detailed description of file type, inputs and outputs
+See [data_description.txt](Genome_Assembly_Pipeline/Data_description.txt) for detailed description of file type, inputs and outputs
 # Prerequisites
 
 Ensure the following dependencies are installed:
