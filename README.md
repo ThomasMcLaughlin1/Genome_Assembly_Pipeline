@@ -14,7 +14,7 @@ Mapping tools facilitated the detection mutations, structural variants, and geno
 
 - [Description](#Description)
 - [Introduction](#Introduction)
-- [Features](#features)
+- [Features](#features (workflow))
 - [Data](#Data)
 - [Prerequisites](#Prerequisites)
 - [Installation](#installation)
