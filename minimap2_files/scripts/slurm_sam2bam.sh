@@ -15,7 +15,9 @@
 source $HOME/.bash_profile
 
 conda activate samtools 
-
+# Convert a SAM file to a BAM file using samtools.
+# -S indicates input is in SAM format.
+# -b specifies that the output should be in BAM format.
 samtools view -S -b  /share/BioinfMSc/rotation1/Group3/minimap2_files/scripts/passreads_reference.sam > passreads_reference.bam
 
 conda deactivate
