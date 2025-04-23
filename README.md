@@ -45,7 +45,7 @@ This project investigates genomic changes between genomes assembled by both Nano
 (9) Visualization of reads mapped back to reference in IGV
 
 # Data
-See [data_description.txt](Genome_Assembly_Pipeline/Data_description.txt) for detailed description of file type, inputs and outputs
+See [data_description.txt](Data_description.txt) for detailed description of file type, inputs and outputs
 # Prerequisites
 
 Ensure the following dependencies are installed:
