@@ -15,7 +15,7 @@
 source $HOME/.bash_profile
 
 conda activate samtools
-
+# Sort a BAM file by genomic coordinates using samtools.
 samtools sort /share/BioinfMSc/rotation1/Group3/minimap2_files/scripts/passreads_reference.bam -o /share/BioinfMSc/rotation1/Group3/minimap2_files/scripts/passreads_reference_sorted.bam
 
 
