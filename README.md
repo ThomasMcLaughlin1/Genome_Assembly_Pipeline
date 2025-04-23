@@ -4,12 +4,15 @@ A series of shell scripts designed for genome assembly from de novo sequencing d
 
 # Introduction
 
-This project investigates genomic changes between genomes assembled by both Nanopore and Illumina read datais desgined to showcase the scripts used to assemble and analyse nanopore and illumina reads from the species Haloferax volcanii. This pipeline enabled the sucessful identification of genomic changes within the samples provided, as well as providing detailed insights into chromosomal structure. 
+This genome assembly pipeline was developed to support a detailed comparative analysis of Haloferax volcanii genomes derived from both Nanopore and Illumina sequencing. The project aims to investigate structural and functional genomic differences between experimental samples and a reference genome, enabling insights into chromosomal architecture, mutation patterns, and potential biological implications. The pipeline integrates tools for sequencing data processing, quality control, assembly, annotation, and visualization.
 
+Careful integration of both long-read and short-read data, enabled for the reconstruction of complete genomic sequences. This revealed the number of chromosomes present as well as structural information such as whether they are linear or circular in form. Hybrid assemblies allowed for analysis of the impact of read length and quality on assembly accuracy and contiguity, providing data diven evidence of the most effective sequencing strategies for microbial genome analysis.
+
+High-resolution mapping tools facilitated the detection mutations, structural variants, and genomic rearrangements that differentiate each sample from a control genome. Following genome assembly, functional annotation enabled the identification of genes potentially impacted by these genomic changes. This supported the downstream investigation of disrupted biological processes and provides context for observed phenotypic differences between strains. Overall, the pipeline is designed to provide a comprehensive and adaptable framework for exploring the genomic variations within prokaryotic samples.
 
 # Contents
 
-- [About](#about)
+- [Description](#Description)
 - [Introduction](#Introduction)
 - [Features](#features)
 - [Data](#Data)
