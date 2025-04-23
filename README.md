@@ -104,7 +104,7 @@ conda activate samools
 conda install -c bioconda samtools
 
 # Usage 
-All SLURM scripts were submitted to the University of Nottingham's HPC. Running and moitoring jobs were done by using the following commands 
+All SLURM scripts were submitted to the University of Nottingham's HPC. Jobs were monitered and ran using the following commands:
 - Submitting a job: sbatch <script_name>
 - moniter jobs progress: squeue -l -u <username>
 - cancel job: scancel <jobID>
